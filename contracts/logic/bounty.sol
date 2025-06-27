@@ -36,6 +36,7 @@ contract BountyPool {
     Treasury public treasury;
     string public repoUrl;
     Rule[] public rules;
+    bytes32[] public allPRKeys;
     mapping(bytes32 => Contribution) public contributions;
     uint256 public totalPaid;
 
@@ -87,6 +88,8 @@ contract BountyPool {
             status: PRStatus.Submitted
         });
 
+        allPRKeys.push(prKey);
+
         emit ContributionSubmitted(prKey, contributor, reward);
     }
 
@@ -123,5 +126,9 @@ contract BountyPool {
         bytes32 prKey
     ) external view returns (Contribution memory) {
         return contributions[prKey];
+    }
+
+    function getAllPRKeys() external view returns (bytes32[] memory) {
+        return allPRKeys;
     }
 }
