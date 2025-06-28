@@ -3,7 +3,7 @@ const Network = {
             sonic: {
                 url: "https://rpc.blaze.soniclabs.com",
                 chainId: 57054,
-                address: "0x2614d9cC64f9C8205743a7e560bAD65c326F1Be0"
+                address: "0x92Be4cac1414479aCB6f5D5799548D37a4E90907"
             },
         },
     };
